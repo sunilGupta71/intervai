@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results · IntervAI</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <h1>IntervAI</h1>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+  </header>
+
+  <main class="results-view">
+    <div class="hero-card">
+      <h2>Your Interview Results</h2>
+      <p id="candidateInfo" class="lead">Loading…</p>
+
+      <div class="score-display">
+        <div class="big-score">
+          <span id="totalScore">--</span>
+          <small>/ <span id="maxScore">--</span></small>
+        </div>
+        <p id="scoreVerdict" class="verdict"></p>
+      </div>
+
+      <h3>Per-Question Feedback</h3>
+      <div id="feedbackList" class="feedback-list"></div>
+
+      <h3>Suggestions to Improve</h3>
+      <ul id="suggestions" class="suggestions"></ul>
+
+      <div class="row">
+        <a href="/" class="primary-btn">Take Another Interview</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/results.js"></script>
+</body>
+</html>

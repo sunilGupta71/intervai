@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IntervAI - AI Interviewer</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <h1>IntervAI</h1>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+  </header>
+
+  <main class="hero">
+    <div class="hero-card">
+      <h2>Your AI Interview Coach</h2>
+      <p class="lead">
+        Practice technical and HR interviews with live camera, voice, and instant AI feedback.
+      </p>
+
+      <form id="startForm" class="form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required />
+
+        <label for="role">Role You're Applying For</label>
+        <input type="text" id="role" name="role" placeholder="e.g. Backend Developer" required />
+
+        <button type="submit" class="primary-btn">Start Interview →</button>
+      </form>
+
+      <ul class="features">
+        <li>🎥 Live camera & mic check</li>
+        <li>⏱️ Timed questions</li>
+        <li>🧠 AI scoring & feedback</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>© IntervAI · Built with Node.js, Express &amp; MongoDB · <a href="/admin.html">Admin</a></small>
+  </footer>
+
+  <script src="/js/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview · IntervAI</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <h1>IntervAI</h1>
+    </div>
+    <div class="header-info">
+      <span id="candidateLabel" class="pill">Loading…</span>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <!-- Permission gate: must enable camera + mic to continue -->
+  <section id="permissionGate" class="permission-gate">
+    <div class="hero-card">
+      <h2>Camera &amp; Microphone Access</h2>
+      <p class="lead">We need access to your camera and microphone to begin the interview.</p>
+      <video id="previewVideo" autoplay playsinline muted class="preview-video"></video>
+      <p id="permissionMsg" class="error-msg hidden">Please enable camera to continue</p>
+      <div class="row">
+        <button id="enableMediaBtn" class="primary-btn">Enable Camera &amp; Mic</button>
+        <button id="beginInterviewBtn" class="primary-btn outline" disabled>Begin Interview</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interview view (hidden until camera/mic enabled and started) -->
+  <main id="interviewView" class="interview-view hidden">
+    <div class="interview-grid">
+      <aside class="cam-panel">
+        <video id="liveVideo" autoplay playsinline muted class="live-video"></video>
+        <div class="cam-status">
+          <span id="recIndicator" class="rec-indicator"></span>
+          <span id="recLabel">Camera ON</span>
+        </div>
+      </aside>
+
+      <section class="question-panel">
+        <div class="progress-wrap">
+          <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+          <span id="progressLabel">Question 1 of 7</span>
+        </div>
+
+        <div class="timer">
+          <div id="timerCircle" class="timer-circle"><span id="timerText">60</span></div>
+        </div>
+
+        <h2 id="questionText" class="question-text">Loading question…</h2>
+        <p id="questionType" class="question-type"></p>
+
+        <div class="answer-area">
+          <textarea id="answerInput" rows="6" placeholder="Type your answer or click 🎤 to use voice…"></textarea>
+          <div class="row">
+            <button id="micBtn" class="secondary-btn">🎤 Start Voice</button>
+            <button id="nextBtn" class="primary-btn">Next →</button>
+          </div>
+          <p id="speechStatus" class="muted small"></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Loading overlay when AI processes results -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="spinner"></div>
+      <p>AI is evaluating your interview…</p>
+    </div>
+  </main>
+
+  <script src="/js/interview.js"></script>
+</body>
+</html>
