@@ -14,7 +14,7 @@ const questions = require('./data/questions');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://sunil885122_db_user:Sunil09112005@cluster0.f5nxlui.mongodb.net/?appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI ||
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
